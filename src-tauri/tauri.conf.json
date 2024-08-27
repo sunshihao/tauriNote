@@ -1,0 +1,38 @@
+{
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "Note",
+    "version": "0.1.1"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": true,
+      "shell": {
+        "all": false,
+        "open": true
+      }
+    },
+    "windows": [
+      {
+        "title": "Note",
+        "width": 800,
+        "height": 600,
+        "url": "https://note.dhc.ink"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; frame-src 'self' https://note.dhc.ink; script-src 'self'"
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.tauri-app.app",
+      "icon": ["icons/sssh.png", "icons/icon.icns", "icons/sssh2.ico"]
+    }
+  }
+}
